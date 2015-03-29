@@ -98,7 +98,7 @@ describe('connectFour', function() {
       assert(!connectFour.turnIsValid(game, 0));
     });
 
-    xit('retuns false if board has a winner', function() {
+    it('retuns false if board has a winner', function() {
       var game = I.fromJS({
         turns: [],
         board: [

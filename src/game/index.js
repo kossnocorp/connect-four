@@ -37,7 +37,8 @@ export function performTurn(game, column) {
 export function turnIsValid(game, column) {
   var validColumn = column >= 0 && column <= 6;
   var columnHasSpace = validColumn && game.getIn(['board', column]).size < 6;
-  return validColumn && columnHasSpace;
+  var hasWinner = winner(game) != undefined;
+  return validColumn && columnHasSpace && !hasWinner;
 }
 
 export function isFull(game) {
