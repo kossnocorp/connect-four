@@ -70,6 +70,17 @@ describe('connectFour', function() {
       var example = [{ player: 1, column: 0, valid: true }];
       assert.deepEqual(result, example);
     });
+
+    it('adds player to column', function() {
+      var game = I.fromJS({
+        turns: [],
+        board: [[], [], [], [], [], [], []]
+      });
+      var newGame = connectFour.performTurn(game, 1);
+      var result = newGame.get('board').toJS();
+      var example = [[], [1], [], [], [], [], []];
+      assert.deepEqual(result, example);
+    });
   });
 
   describe('turnIsValid', function() {
