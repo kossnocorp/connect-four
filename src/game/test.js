@@ -76,9 +76,9 @@ describe('connectFour', function() {
         turns: [],
         board: [[], [], [], [], [], [], []]
       });
-      var newGame = connectFour.performTurn(game, 1);
+      var newGame = connectFour.performTurn(game, 2);
       var result = newGame.get('board').toJS();
-      var example = [[], [1], [], [], [], [], []];
+      var example = [[], [], [1], [], [], [], []];
       assert.deepEqual(result, example);
     });
   });

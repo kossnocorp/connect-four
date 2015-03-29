@@ -25,17 +25,19 @@ export function whoseTurn(game) {
 }
 
 export function performTurn(game, column) {
+  var player = whoseTurn(game);
+
   return game
     .update('turns', function(turns) {
       return turns.push(I.Map({
-        player: whoseTurn(game),
+        player,
         column,
         valid: turnIsValid(game, column)
       }));
     })
     .update('board', function(board) {
       return board.update(column, function(c) {
-        return c.push(column);
+        return c.push(player);
       });
     });
 }
