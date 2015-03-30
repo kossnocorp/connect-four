@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --require mocha-clean --compilers js:babel/register --recursive \"src/**/test.js\"",
-    "autotest": "npm run test -- --watch"
+    "autotest": "npm run test -- --watch",
+    "terminal": "babel-node ./src/terminal"
   },
   "author": "Sasha Koss <koss@nocorp.me>",
   "license": "MIT",
@@ -16,7 +17,7 @@
   },
   "dependencies": {
     "babel": "^4.7.16",
+    "cli-prompt": "^0.4.1",
     "immutable": "^3.7.0"
   }
 }
-
